@@ -55,6 +55,7 @@ The goal of this project is to gain practical experience with security monitorin
         | Security Investigations|
         |   & Incident Response |
         +-----------------------+
+```
 
 ## Objectives
 
@@ -85,7 +86,7 @@ The goal of this project is to gain practical experience with security monitorin
 | Linux                     | Endpoint monitoring            |
 | GitHub                    | Project documentation          |
 | MITRE ATT&CK              | Threat behavior mapping        |
-```
+
 
 ## Planned Security Scenarios
 
