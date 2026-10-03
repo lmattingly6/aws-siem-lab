@@ -9,8 +9,9 @@ The environment uses Wazuh as the Security Information and Event Management (SIE
 The goal of this project is to gain practical experience with security monitoring, log analysis, threat detection, incident investigation, and cloud security.
 
 ## Architecture
+```
 
-                  AWS SIEM / SOC LAB
+                    AWS SIEM / SOC LAB
                            |
                            v
                   +-------------------+
@@ -84,6 +85,7 @@ The goal of this project is to gain practical experience with security monitorin
 | Linux                     | Endpoint monitoring            |
 | GitHub                    | Project documentation          |
 | MITRE ATT&CK              | Threat behavior mapping        |
+```
 
 ## Planned Security Scenarios
 
