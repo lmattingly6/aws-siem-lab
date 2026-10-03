@@ -9,60 +9,38 @@ The environment uses Wazuh as the Security Information and Event Management (SIE
 The goal of this project is to gain practical experience with security monitoring, log analysis, threat detection, incident investigation, and cloud security.
 
 ## Architecture
-```
 
-                    AWS SIEM / SOC LAB
-                           |
-                           v
-                  +-------------------+
-                  |      AWS VPC      |
-                  |    10.0.0.0/16    |
-                  +-------------------+
-                           |
-                    Public Subnet
-                    10.0.1.0/24
-                           |
-          +----------------+----------------+
-          |                |                |
-          v                v                v
-   +-------------+  +-------------+  +-------------+
-   |   Windows   |  |    Linux    |  |  CloudTrail |
-   |   Endpoint  |  |   Endpoint  |  | AWS Logs    |
-   | Wazuh Agent |  | Wazuh Agent |  +-------------+
-   +------+------+  +------+------+        |
-          |                |                v
-          |                |          +-------------+
-          |                |          |  Amazon S3  |
-          |                |          | CloudTrail  |
-          |                |          +------+------+
-          |                |                 |
-          +--------+-------+-----------------+
-                   |
-                   v
-           +---------------+
-           | Wazuh SIEM    |
-           |    Server     |
-           +-------+-------+
-                   |
-                   v
-           +---------------+
-           |     Wazuh     |
-           |   Dashboard   |
-           +-------+-------+
-                   |
-                   v
-        +-----------------------+
-        | SecurityInvestigations|
-        |   & Incident Response |
-        +-----------------------+
+```mermaid
+flowchart TD
 
-Security Groups
-      |
-      +--> Wazuh-SG
-      |
-      +--> Linux-Endpoint-SG
-      |
-      +--> Windows-Endpoint-SG
+    A[AWS SIEM / SOC Lab]
+    B[AWS VPC<br>10.0.0.0/16]
+    C[Public Subnet<br>10.0.1.0/24]
+
+    D[Windows Endpoint<br>Wazuh Agent]
+    E[Linux Endpoint<br>Wazuh Agent]
+
+    F[Wazuh SIEM Server]
+    G[Wazuh Dashboard]
+    H[Security Investigations<br>& Incident Response]
+
+    I[AWS CloudTrail<br>Account Activity Logs]
+    J[Amazon S3<br>CloudTrail Logs]
+
+    A --> B
+    B --> C
+
+    C --> D
+    C --> E
+
+    D -->|Security/Event Logs| F
+    E -->|Security/Event Logs| F
+
+    I -->|AWS Logs| J
+    J -->|CloudTrail Logs| F
+
+    F --> G
+    G --> H
 ```
 
 ## Objectives
