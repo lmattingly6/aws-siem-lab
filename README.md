@@ -10,29 +10,50 @@ The goal of this project is to gain practical experience with security monitorin
 
 ## Architecture
 
-```text
-                         AWS VPC
-                     10.0.0.0/16
+                  AWS SIEM / SOC LAB
                            |
-        +------------------+------------------+
-        |                  |                  |
-        v                  v                  v
-   Windows EC2         Linux EC2          AWS CloudTrail
-   Wazuh Agent         Wazuh Agent              |
-        |                  |                    v
-        |                  |                   S3
-        |                  |                    |
-        +--------+---------+--------------------+
-                 |
-                 v
-          Wazuh SIEM Server
-                 |
-                 v
-          Wazuh Dashboard
-                 |
-                 v
-        Security Investigations
-```
+                           v
+                  +-------------------+
+                  |      AWS VPC      |
+                  |    10.0.0.0/16    |
+                  +-------------------+
+                           |
+                    Public Subnet
+                    10.0.1.0/24
+                           |
+          +----------------+----------------+
+          |                |                |
+          v                v                v
+   +-------------+  +-------------+  +-------------+
+   |   Windows   |  |    Linux    |  |  CloudTrail |
+   |   Endpoint  |  |   Endpoint  |  | AWS Logs    |
+   | Wazuh Agent |  | Wazuh Agent |  +-------------+
+   +------+------+  +------+------+        |
+          |                |                v
+          |                |          +-------------+
+          |                |          |  Amazon S3  |
+          |                |          | CloudTrail  |
+          |                |          +------+------+
+          |                |                 |
+          +--------+-------+-----------------+
+                   |
+                   v
+           +---------------+
+           | Wazuh SIEM    |
+           |    Server     |
+           +-------+-------+
+                   |
+                   v
+           +---------------+
+           |     Wazuh     |
+           |   Dashboard   |
+           +-------+-------+
+                   |
+                   v
+        +-----------------------+
+        | Security Investigations|
+        |   & Incident Response |
+        +-----------------------+
 
 ## Objectives
 
