@@ -52,9 +52,17 @@ The goal of this project is to gain practical experience with security monitorin
                    |
                    v
         +-----------------------+
-        | Security Investigations|
+        | SecurityInvestigations|
         |   & Incident Response |
         +-----------------------+
+
+Security Groups
+      |
+      +--> Wazuh-SG
+      |
+      +--> Linux-Endpoint-SG
+      |
+      +--> Windows-Endpoint-SG
 ```
 
 ## Objectives
