@@ -10,6 +10,7 @@ The goal of this project is to gain practical experience with security monitorin
 
 ## Architecture
 
+```text
                          AWS VPC
                      10.0.0.0/16
                            |
@@ -31,7 +32,7 @@ The goal of this project is to gain practical experience with security monitorin
                  |
                  v
         Security Investigations
-
+```
 
 ## Objectives
 
@@ -111,7 +112,7 @@ Each security event will be investigated using the following process:
 
 ## Project Structure
 
-
+```text
 aws-siem-lab/
 │
 ├── README.md
@@ -133,7 +134,7 @@ aws-siem-lab/
     ├── incident-001.md
     ├── incident-002.md
     └── incident-003.md
-
+```
 
 ## Security Considerations
 
@@ -181,4 +182,6 @@ This project will demonstrate practical experience with:
 * MITRE ATT&CK
 * SOC workflows
 * Technical documentation
+
+
 
