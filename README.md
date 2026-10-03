@@ -98,31 +98,31 @@ Security Groups
 
 ## Planned Security Scenarios
 
-### Scenario 1 — Authentication Failures
+### Scenario 1: Authentication Failures
 
 Generate multiple failed authentication attempts and investigate the resulting SIEM alerts.
 
 **Objective:** Practice identifying suspicious authentication activity.
 
-### Scenario 2 — Unauthorized Account Creation
+### Scenario 2: Unauthorized Account Creation
 
 Create a test account on a lab endpoint and investigate the corresponding security event.
 
 **Objective:** Practice monitoring account-management activity.
 
-### Scenario 3 — File Integrity Monitoring
+### Scenario 3: File Integrity Monitoring
 
 Modify a monitored file and investigate the resulting Wazuh alert.
 
 **Objective:** Practice detecting unauthorized file changes.
 
-### Scenario 4 — PowerShell Activity
+### Scenario 4: PowerShell Activity
 
 Generate controlled PowerShell activity on the Windows endpoint and investigate the resulting telemetry.
 
 **Objective:** Practice Windows security monitoring and threat detection.
 
-### Scenario 5 — AWS Activity
+### Scenario 5: AWS Activity
 
 Generate controlled AWS IAM or infrastructure activity and investigate the corresponding CloudTrail event.
 
@@ -183,8 +183,8 @@ Security testing will be performed only against systems owned and controlled as 
 **Current Phase:** Project initialization
 
 * [x] Create GitHub repository
-* [ ] Define project architecture
-* [ ] Build AWS VPC
+* [x] Define project architecture
+* [x] Build AWS VPC
 * [ ] Deploy Wazuh SIEM
 * [ ] Deploy Windows endpoint
 * [ ] Deploy Linux endpoint
